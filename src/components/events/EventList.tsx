@@ -60,7 +60,7 @@ export default function EventList() {
                     location={event.location_name}
                     attendees={0} // Placeholder for now
                     userStatus={null} // Placeholder for now
-                    isCancelled={event.is_cancelled}
+                    isCancelled={event.is_cancelled ?? false}
                 />
             ))}
         </div>

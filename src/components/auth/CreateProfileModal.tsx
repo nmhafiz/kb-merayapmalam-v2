@@ -45,7 +45,7 @@ export default function CreateProfileModal({ isOpen, onClose, onSuccess, initial
     // But since it's a modal that might be "closed" but not "unmounted" by parent, useEffect is safer.
 
 
-    const { register, handleSubmit, formState: { errors }, reset } = useForm<AuthFormValues>({
+    const { register, handleSubmit, formState: { errors } } = useForm<AuthFormValues>({
         resolver: zodResolver(authSchema),
     });
 
