@@ -30,12 +30,12 @@ export default function EventCard({ id, title, date, time, location, attendees, 
     };
 
     const addToCalendar = () => {
-        const [year, month, day] = date.split('-').map(Number); // Assuming ISO or similar
+
         // Fallback for demo: use current date parts if parsing fails
         const eventDate = new Date(date);
         if (isNaN(eventDate.getTime())) return;
 
-        const startTime = time.replace(/[:\s]/g, '');
+
         const titleEscaped = encodeURIComponent(title);
         const locationEscaped = encodeURIComponent(location);
 

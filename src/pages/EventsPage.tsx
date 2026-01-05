@@ -48,7 +48,7 @@ export default function EventsPage() {
 
             // Fetch user's RSVPs if logged in
             const { data: { session } } = await supabase.auth.getSession();
-            let userRSVPs: Database['public']['Tables']['kb_event_rsvps']['Row'][] = [];
+            let userRSVPs: Pick<Database['public']['Tables']['kb_event_rsvps']['Row'], 'event_id' | 'status'>[] = [];
             if (session?.user) {
                 const { data: rsvps, error: rsvpError } = await supabase
                     .from('kb_event_rsvps')
