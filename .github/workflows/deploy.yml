@@ -35,7 +35,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: kb-merayapmalam
+          projectName: merayapmalam
           directory: dist
           # Optional: Enable invalidation of the cache
           # gitHubToken: ${{ secrets.GITHUB_TOKEN }}
