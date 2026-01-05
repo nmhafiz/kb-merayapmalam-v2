@@ -5,7 +5,7 @@ import type { Database } from '../../types/supabase';
 import { format } from 'date-fns';
 
 type Poll = Database['public']['Tables']['kb_polls']['Row'];
-type PollOption = Database['public']['Tables']['kb_poll_options']['Row'];
+
 
 export default function PollManager() {
     const [polls, setPolls] = useState<Poll[]>([]);
@@ -59,7 +59,7 @@ export default function PollManager() {
                 .filter(opt => opt.trim() !== '')
                 .map((opt, index) => ({
                     poll_id: pollData.id,
-                    label: opt,
+                    option_text: opt,
                     sort_order: index
                 }));
 
